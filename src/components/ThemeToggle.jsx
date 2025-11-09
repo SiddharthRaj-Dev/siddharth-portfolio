@@ -1,0 +1,3 @@
+
+import React from 'react';
+export default function ThemeToggle(){const [light,setLight]=React.useState(false);React.useEffect(()=>{const saved=localStorage.getItem('theme-light')==='1';setLight(saved);document.documentElement.setAttribute('data-theme',saved?'light':'dark')},[]);function toggle(){const next=!light;setLight(next);localStorage.setItem('theme-light',next?'1':'0');document.documentElement.setAttribute('data-theme',next?'light':'dark')}return(<button onClick={toggle} className="ripple-effect btn btn-unified">{light?'Dark':'Light'} Mode</button>)}

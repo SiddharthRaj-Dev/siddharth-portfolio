@@ -1,0 +1,2 @@
+
+import React from 'react';import { motion } from 'framer-motion';export default function MotionSection({id,className='',children}){return(<motion.section id={id} className={className} initial={{opacity:0,y:60,rotateX:-10,rotateY:5}} whileInView={{opacity:1,y:0,rotateX:0,rotateY:0,boxShadow:'0 0 60px rgba(34,211,238,0.25)'}} viewport={{once:false,amount:0.25}} transition={{type:'spring',stiffness:140,damping:16}} style={{transform:'perspective(1000px)'}}>{children}</motion.section>)}

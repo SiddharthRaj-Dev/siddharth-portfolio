@@ -1,0 +1,4 @@
+
+import React from 'react';
+import ThemeToggle from './ThemeToggle';
+export default function Nav(){return(<header className="sticky top-0 z-20 backdrop-blur-xl bg-slate-900/40 border-b border-white/10"><div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between"><div style={{width:32}}></div><nav className="hidden md:flex items-center gap-6 text-sm"><a href="#about" className="ripple-effect btn btn-unified">About</a><a href="#skills" className="ripple-effect btn btn-unified">Skills</a><a href="#education" className="ripple-effect btn btn-unified">Education</a><a href="#projects" className="ripple-effect btn btn-unified">Projects</a><a href="#certificates" className="ripple-effect btn btn-unified">Certificates</a><a href="#contact" className="ripple-effect btn btn-unified">Contact</a></nav><div className="flex items-center gap-3"><ThemeToggle /><a href="#contact" className="ripple-effect btn btn-unified">Hire me</a></div></div></header>)}
