@@ -1,3 +1,25 @@
+import React, { useEffect, useState } from "react";
 
-import React from 'react';
-export default function ThemeToggle(){const [light,setLight]=React.useState(false);React.useEffect(()=>{const saved=localStorage.getItem('theme-light')==='1';setLight(saved);document.documentElement.setAttribute('data-theme',saved?'light':'dark')},[]);function toggle(){const next=!light;setLight(next);localStorage.setItem('theme-light',next?'1':'0');document.documentElement.setAttribute('data-theme',next?'light':'dark')}return(<button onClick={toggle} className="ripple-effect btn btn-unified">{light?'Dark':'Light'} Mode</button>)}
+export default function ThemeToggle() {
+  const [light, setLight] = useState(false);
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    document.documentElement.classList.toggle("light", savedTheme === "light");
+    setLight(savedTheme === "light");
+  }, []);
+
+  const toggle = () => {
+    const next = !light;
+    setLight(next);
+    const theme = next ? "light" : "dark";
+    document.documentElement.classList.toggle("light", next);
+    localStorage.setItem("theme", theme);
+  };
+
+  return (
+    <button onClick={toggle} className="ripple-effect btn btn-unified">
+      {light ? "🌙 Dark Mode" : "☀️ Light Mode"}
+    </button>
+  );
+      }
